@@ -15,7 +15,8 @@ exports.createIfc = async (req, res) => {
         }
 
         // Step 1: Check if survey_id already exists
-        const existingIfc = await Ifc.findOne({ where: { survey_id } });
+        // const existingIfc = await Ifc.findOne({ where: { survey_id } });
+        const existingIfc = await Ifc.find;
 
         if (existingIfc) {
             return res.status(400).json({ message: `Survey ID '${survey_id}' already exists. No duplicate survey allowed.` });
